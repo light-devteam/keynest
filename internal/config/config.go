@@ -3,7 +3,6 @@ package config
 import (
 	"flag"
 	"os"
-	"time"
 
 	"github.com/ilyakaznacheev/cleanenv"
 )
@@ -12,15 +11,6 @@ type Config struct {
 	Env   string      `yaml:"env"`
 	GRPC  GRPCConfig  `yaml:"grpc"`
 	Token TokenConfig `yaml:"token"`
-}
-
-type GRPCConfig struct {
-	Port    int           `yaml:"port"`
-	Timeout time.Duration `yaml:"timeout"`
-}
-
-type TokenConfig struct {
-	Ttl time.Duration `yaml:"ttl"`
 }
 
 func MustLoad() *Config {
